@@ -12,7 +12,7 @@ public class IbanValidationTest {
 	public void giveniban_whencorect_thenTrueIsReturned() {
 		String iban	=	"TN5904018104004942712345";
 		IbanValidation validator	=	new IbanValidation();
-		boolean result	=	validator.checkIban(iban);
+		boolean result	=	validator.validate(iban);
 		assertTrue(result);
 		
 	}
@@ -20,7 +20,7 @@ public class IbanValidationTest {
 	public void giveniban_whenincorect_thenFalseIsReturned() {
 		String iban	=	"TN590401810400494271234";
 		IbanValidation validator	=	new IbanValidation();
-		boolean result	=	validator.checkIban(iban);
+		boolean result	=	validator.validate(iban);
 		assertFalse(result);
 		
 	}
