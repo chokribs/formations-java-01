@@ -1,2 +1,1 @@
-call compile.bat
-call run.bat
+mvn test

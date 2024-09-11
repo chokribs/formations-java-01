@@ -10,10 +10,24 @@
     <artifactId>iban4j</artifactId>
     <version>3.2.3-RELEASE</version>
 </dependency>
+<!-- https://mvnrepository.com/artifact/junit/junit -->
+<dependency>
+    <groupId>junit</groupId>
+    <artifactId>junit</artifactId>
+    <version>4.13.2</version>
+    <scope>test</scope>
+</dependency>
+
 
   </dependencies>
   <build>
     <sourceDirectory>src</sourceDirectory>
+    <testSourceDirectory>src/test/</testSourceDirectory>
+    <resources>
+	  <resource>
+	     <directory>resources</directory>
+	  </resource>
+    </resources>
     <plugins>
       <plugin>
         <artifactId>maven-compiler-plugin</artifactId>
@@ -22,6 +36,36 @@
           <release>11</release>
         </configuration>
       </plugin>
+      <plugin>
+            <groupId>org.codehaus.mojo</groupId>
+            <artifactId>exec-maven-plugin</artifactId>
+            <version>3.3.0</version>
+            <configuration>
+                <mainClass>tn.itdevspace.tools.iban.IbanApplication</mainClass>
+            </configuration>
+        </plugin>
+
     </plugins>
   </build>
+  <reporting>
+    <plugins>
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-checkstyle-plugin</artifactId>
+            <version>3.5.0</version>
+            <!--
+            <configuration>
+                <configLocation>checkstyle.xml</configLocation>
+            </configuration>
+            <executions>
+        <execution>
+            <goals>
+                <goal>check</goal>
+            </goals>
+        </execution>
+    </executions>
+            -->
+        </plugin>
+    </plugins>
+</reporting>
 </project>

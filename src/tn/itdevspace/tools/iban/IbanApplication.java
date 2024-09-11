@@ -1,15 +1,22 @@
 package tn.itdevspace.tools.iban;
 
-public class IbanApplication {
+public final class IbanApplication {
+ /**
+ * private constructor.
+ */
+private IbanApplication() {
+ super();
+}
 
-	public static void main(String[] args) {
-		
-		System.out.println("Iban Application : start");
-		IbanView view =	new IbanView();
-		view.execute();
-		
-		
-
-	}
-
+/**
+  * Main methode.
+  * @param args
+  */
+public static void main(final String[] args) {
+ System.out.println("Iban Application : start");
+ IbanView view = new IbanView();
+ while (true) {
+  view.execute();
+ }
+}
 }

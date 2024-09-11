@@ -1,1 +1,1 @@
-javac -d ./bin ./src/tn/itdevspace/tools/iban/*.java
+mvn compile

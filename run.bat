@@ -1,1 +1,1 @@
-java -cp ./bin tn.itdevspace.tools.iban.IbanApplication
+mvn exec:java
