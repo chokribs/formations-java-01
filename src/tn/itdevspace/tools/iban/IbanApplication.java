@@ -1,10 +1,15 @@
 package tn.itdevspace.tools.iban;
 
-public final class IbanApplication {
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ConfigurableApplicationContext;
+@SuppressWarnings({"PMD", "checkstyle:hideutilityclassconstructor"})
+@SpringBootApplication
+public class IbanApplication {
     /**
      * private constructor.
      */
-    private IbanApplication() {
+    public IbanApplication() {
         super();
     }
 
@@ -14,9 +19,10 @@ public final class IbanApplication {
      */
     public static void main(final String[] args) {
         System.out.println("Iban Application : start");
-        IIbanView view = IbanFactory.getIbanViewInstance(
-                IbanFactory.getIbanValidation()
-                );
+        ConfigurableApplicationContext context =
+                SpringApplication.run(IbanApplication.class, args);
+        IIbanView view = context.getBean(IIbanView.class);
+
         while (true) {
             view.execute();
         }

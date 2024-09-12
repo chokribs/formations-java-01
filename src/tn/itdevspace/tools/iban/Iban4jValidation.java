@@ -4,7 +4,8 @@ import org.iban4j.IbanFormatException;
 import org.iban4j.IbanUtil;
 import org.iban4j.InvalidCheckDigitException;
 import org.iban4j.UnsupportedCountryException;
-
+import org.springframework.stereotype.Component;
+@Component
 public class Iban4jValidation implements IIbanValidator {
     @Override
     public final boolean validate(final String iban) {

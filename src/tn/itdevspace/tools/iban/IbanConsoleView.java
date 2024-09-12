@@ -2,6 +2,8 @@ package tn.itdevspace.tools.iban;
 
 import java.util.Scanner;
 
+import org.springframework.stereotype.Component;
+@Component
 public class IbanConsoleView implements IIbanView {
     /**
      * Object used to get input data.
@@ -12,18 +14,12 @@ public class IbanConsoleView implements IIbanView {
      */
     private IIbanValidator ibanValidator;
     /**
-     * empty constructor.
-     */
-    private IbanConsoleView() {
-        super();
-        this.scanner = new Scanner(System.in);
-    }
-    /**
      * @param validator
      */
     public IbanConsoleView(final IIbanValidator validator) {
-        this();
+        super();
         this.ibanValidator = validator;
+        this.scanner = new Scanner(System.in);
     }
     @Override
     public final void execute() {
