@@ -1,6 +1,15 @@
 package tn.itdevspace.tools.iban;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
+
 public final class IbanApplication {
+    /**
+     * logger object.
+     */
+    private static final Logger LOGGER =
+            LogManager.getLogger(IbanApplication.class);
     /**
      * private constructor.
      */
@@ -13,7 +22,7 @@ public final class IbanApplication {
      * @param args
      */
     public static void main(final String[] args) {
-        System.out.println("Iban Application : start");
+        LOGGER.info("Iban Application : start");
         IIbanView view = IbanFactory.getIbanViewInstance(
                 IbanFactory.getIbanValidation()
                 );

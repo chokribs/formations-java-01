@@ -3,6 +3,7 @@ package tn.itdevspace.tools.iban;
 import java.util.Scanner;
 
 public class IbanConsoleView implements IIbanView {
+
     /**
      * Object used to get input data.
      */
@@ -28,12 +29,10 @@ public class IbanConsoleView implements IIbanView {
     @Override
     public final void execute() {
         System.out.println("Introduire IBAN:\r");
+
         if (scanner.hasNextLine()) {
             String iban = scanner.nextLine();
-            System.out.println(
-                    String.format("Validation: %s -> %s",
-                            iban, validatIban(iban))
-                    );
+            validatIban(iban);
         }
     }
     private boolean validatIban(final String iban) {
